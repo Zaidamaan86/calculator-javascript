@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    body{
+      
+      
+    }
+
+
+  .calc-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 285px;
+    column-gap: 1px;
+    row-gap: 10px;
+    /* background-color: black; */
+    justify-items: center;
+    align-items:center ;
+  }
+  
+    button{
+      border: 0 none;
+      box-shadow: 1px 1px 6px rgba(0,0,0,6);
+      width:70px;
+      padding: 16px 10px;
+      border-radius: 50px;
+      font-family: roboto,Arial, Helvetica, sans-serif; 
+      font-size: 30px;
+      color: white;
+    }
+
+    .yellow{
+      background-color: rgb(255, 173, 32);
+    }
+
+    .dark{
+      background-color: rgb(69, 69, 69);
+    }
+
+    .main-grid{
+      display: grid;
+      grid-template-rows: 100px 1fr;
+      width: 285px;
+      row-gap: 30px;
+      border: 1px solid black;
+      padding: 10px 5px;
+      box-shadow: 4px 4px 10px rgba(124, 122, 122, 1);
+      /* z-index: 0; */
+    }
+
+    .top-div{
+      /* background-color: rgb(7, 142, 142); */
+      height: 100px;
+      position: relative;
+      width: 270px;
+      border: 1px solid black;
+      padding: 10px 5px;
+      box-shadow: 1px 1px 1px rgba(124, 122, 122, 0.1);
+      /* margin-bottom: 200px; */
+    }
+
+    #answer{
+      color: rgb(0, 0, 0);
+      font-size: 50px;
+      position: absolute;
+      bottom: 1px;
+      right: 1px;
+      /* z-index: 1; */
+    }
+
+  </style>
+
+</head>
+
+
+
+<body>
+  <div class="main-grid">
+    <div class="top-div"> 
+      <div id="answer"></div>
+    </div>
+    
+    <div class="calc-grid">
+      <button class="dark" onclick="ans+='1'; document.getElementById('answer').innerHTML = ans;">1</button>
+      <button class="dark" onclick="ans+='2'; document.getElementById('answer').innerHTML = ans;">2</button>
+      <button class="dark" onclick="ans+='2'; document.getElementById('answer').innerHTML = ans;">3</button>
+      <button class="yellow" onclick="ans+=' + '; document.getElementById('answer').innerHTML = ans;">+</button>
+      <button class="dark" onclick="ans+='4'; document.getElementById('answer').innerHTML = ans;">4</button>
+      <button class="dark" onclick="ans+='5'; document.getElementById('answer').innerHTML = ans;">5</button>
+      <button class="dark" onclick="ans+='6'; document.getElementById('answer').innerHTML = ans;">6</button>
+      <button class="yellow" onclick="ans+=' - '; document.getElementById('answer').innerHTML = ans;">-</button>
+      <button class="dark" onclick="ans+='7'; document.getElementById('answer').innerHTML = ans;">7</button>
+      <button class="dark" onclick="ans+='8'; document.getElementById('answer').innerHTML = ans;">8</button>
+      <button class="dark" onclick="ans+='9'; document.getElementById('answer').innerHTML = ans;">9</button>
+      <button class="yellow" onclick="ans+=' * '; document.getElementById('answer').innerHTML = ans;">*</button>
+      <button class="dark" onclick="ans+='0'; document.getElementById('answer').innerHTML = ans;">0</button>
+      <button class="dark" onclick="ans+='.'; document.getElementById('answer').innerHTML = ans;">.</button>
+      <button class="dark" onclick="ans=eval(ans); 
+              console.log(ans); document.getElementById('answer').innerHTML = ans;">=</button>
+      <button class="yellow" onclick="ans+=' / '; document.getElementById('answer').innerHTML = ans;" >/</button>
+      <button class="dark" onclick="ans=''; document.getElementById('answer').innerHTML = ans;">AC</button>
+    
+    </div>
+  </div>
+ 
+
+  <script>
+    let ans = '';
+    document.getElementById('answer').textContent = ans;
+  </script>
+
+</body>
+</html>
